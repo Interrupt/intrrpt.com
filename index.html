@@ -1,0 +1,118 @@
+<html>
+<head>
+	<title>cuddigan.dyndns.org</title>
+	<style type="text/css">
+	/* title image replacement */
+		#title {
+			margin: 0;
+			padding: 0;
+			height: 101px;
+			position: relative;
+			float: left;
+		}
+
+		#title span {
+			background: url('images/header.jpg') no-repeat;
+			position: absolute;
+			width: 407px;
+			height: 100%;
+		}
+
+		#splash {
+			background-color: #0a0a0a;
+			background-image: url('images/splash-bg2.gif');
+			background-repeat: repeat-x;
+			background-color: #0a191f;
+		}
+		a { text-decoration: none; color: #1a81ad; }
+		a img.flickr { border: solid 1px #0b384b; margin: 3px;}
+		a:hover { color: #fff; }
+		a.header { background-color: #000; padding: 0 6px 2px 6px; }
+		a.header:hover { text-decoration: none; color: #fff; background-color: #000; }
+		body { text-align: center; background-image: url('images/bg_gradient.jpg'); background-repeat: repeat-x; background-color: #0b384b; color: #fff; font-family: Georgia, Arial; font-size: 1.2em; padding: 0; margin: 0; }
+		#about {
+			width: 154px;
+			text-align: left;
+			float: left;
+			margin: 30px 0 0 30px;
+		}
+		#about span { background-color: #111; color: #fff; font-size: 1.5em; }
+		h2 { font-size: 1.3em; padding: 0; margin: 0 0 4px 0; font-weight: normal; }
+		h2.flickr { margin-left: 4px;}
+		img.twitter { margin: 0 8px 0 0;;}
+		a img:hover { border: solid 1px #1a81ad; }
+		span.twitter { font-size: 1.22em; font-style: italic; }
+	</style>	
+	<script type="text/javascript" src="javascript/jquery-1.2.6.pack.js"></script>
+	<script>
+		/* Get Flickr photos */
+		function getFlickrImage(i,item){
+                        var img = $("<img/>").attr("src", item.media.m.replace(/m.jpg/,"s.jpg")).wrap("<a href='" + item.link + "'></a>");
+                        img.attr("width", 75);
+			img.attr("class","flickr");
+                        img.appendTo("#flickr_feed").wrap("<a href='" + item.link + "'></a>");
+		}
+
+		$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=7525062@N05&lang=en-us&format=json&jsoncallback=?", function(data){
+			for(var i = 0; i < 8; i++)
+			{
+				getFlickrImage(i, data.items[i]);	
+			}
+		});
+
+		/* Get latest Twitter update */
+		$.getJSON("http://twitter.com/statuses/user_timeline/cuddigan.json?count=1&callback=?", function(data) {
+			var spn = jQuery("<span class='twitter'><a href='http://www.twitter.com/cuddigan'>" + data[0].text + "</a></span>").appendTo("#twitter");
+			var avatar = jQuery("<img class='twitter' style=\"float: left;\" src=\"" + data[0].user.profile_image_url + "\"/>");
+			$("#twitter").append(spn);
+		});
+
+	</script>
+</head>
+<body width="100%">
+	<div style="text-align:center; width: 100%;">
+		<div style="width: 700px; margin: auto;">
+			<h1 id="title"><span></span>Chad Cuddigan</h1>
+			<span style="float: right; margin: 39px 2px 0 0; text-align: left;">
+				<a class="header" href="downloads/">Downloads</a>
+				<a class="header" href="http://www.cuddigancreative.com/index.php/blog/">Blog</a>
+			</span>
+		</div>
+	</div>
+	<div id="splash" style="margin: auto; width: 100%; float: left; margin-bottom: 8px;">
+		<div style="width: 700px; margin: auto; text-align: left;">
+			<div style="background-color: #111; padding: 10px; width: 672px; text-align: left; ">
+				<div style="background-image: url('images/chad_splash.jpg'); width: 672px; height: 310px;" >
+					<div id="about">
+	                                <span>hello!</br>welcome to my little corner of the web.</span>
+	                        	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="margin: auto; width: 100%; float: left;">
+		<div style="width: 700px; margin: auto; height: 220px; text-align: left;">
+			<div id="flickr_feed" style="text-align: left; float: left; width: 350px;">
+				<h2 class="flickr">Flickr!</h2>
+			</div>
+			<div id="twitter" style="text-align: left; float: left; width: 342px;">
+				<h2>Twitter!</h2>
+			</div>
+		</div>
+		<div style="width: 700px; margin: auto; text-align: left;">
+			<div style="position: absolute; top: 340px; margin: 0 0 0 442px;">
+                                <a href="http://digital--reality.net"><img src="images/DigitalRealityBadge.png" style="border: none;"/></a>
+                        </div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4699464-5");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
