@@ -1,0 +1,10 @@
+---
+layout: post
+title: A starting point 
+---
+
+Welcome! I'm a software developer currently living in *North Dakota* and working at *"RocketLawyer":http://www.rocketlawyer.com*.
+
+This blog is a fresh start from my previous Wordpress incarnation which I found too heavy for my uses and acted only as a honeypot for spammers. I stumbled upon the lightweight "Jekyll":http://jekyllrb.com blogging platform while this site was hosted at GitHub, it's simple templating structure and static page generation was an instant draw.
+
+Jekyll author Tom Preston's blog post "_Blogging like a hacker_":http://tom.preston-werner.com was what cemented the idea to switch when I encountered it a few months later. After reading it I sat down with a cup of tea and a few hours to kill and the end result is this - a simple platform I can host myself and spend my time writing instead of administering.

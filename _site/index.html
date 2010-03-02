@@ -1,0 +1,87 @@
+
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    	<meta content="en-us" http-equiv="Content-Language" />
+	<meta content="Chad Cuddigan - Software developer, coffee drinker, Linux fan, motorcyclist." name="description" />
+	<meta content="Chad Cuddigan" name="author" />
+	<title>Chad Cuddigan - Priority Interrupt</title>
+	<link rel=StyleSheet href="/dev/site.css" type="text/css" media=screen>
+	<script type="text/javascript" src="/dev/javascript/jquery-1.2.6.pack.js"></script>
+	<script>
+		/* Get Flickr photos */
+		function getFlickrImage(i,item){
+                        var img = $("<img/>").attr("src", item.media.m.replace(/m.jpg/,"s.jpg")).wrap("<a href='" + item.link + "'></a>");
+                        img.attr("width", 75);
+			img.attr("class","flickr");
+                        img.appendTo("#flickr_feed").wrap("<a href='" + item.link + "'></a>");
+		}
+
+		$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=7525062@N05&lang=en-us&format=json&jsoncallback=?", function(data){
+			for(var i = 0; i < 8; i++)
+			{
+				getFlickrImage(i, data.items[i]);	
+			}
+		});
+
+		/* Get latest Twitter update */
+		$.getJSON("http://twitter.com/statuses/user_timeline/cuddigan.json?count=1&callback=?", function(data) {
+			var spn = jQuery("<span class='twitter'><a href='http://www.twitter.com/cuddigan'>" + data[0].text + "</a></span>").appendTo("#twitter");
+			var avatar = jQuery("<img class='twitter' style=\"float: left;\" src=\"" + data[0].user.profile_image_url + "\"/>");
+			$("#twitter").append(spn);
+		});
+
+	</script>
+</head>
+<body width="100%">
+	<div style="text-align:center; width: 100%;">
+		<div style="width: 700px; margin: auto;">
+			<h1 id="title"><a href="/index.html" rel="me"><span></span>Chad Cuddigan</a></h1>
+			<span style="float: right; margin: 39px 2px 0 0; text-align: left;">
+				<a class="header" href="http://github.com/Interrupt">Projects</a>
+				<a class="header" href="/dev/blog.html">Blog</a>
+			</span>
+		</div>
+	</div>
+	<div id="splash" style="margin: auto; width: 100%; float: left; margin-bottom: 8px;">
+		<div style="width: 700px; margin: auto; text-align: left;">
+			<div style="background-color: #111; padding: 10px; width: 672px; text-align: left; ">
+				<div style="background-image: url('images/chad_splash.jpg'); width: 672px; height: 310px;" >
+					<div id="about">
+	                                <span>hello!</br>welcome to my little corner of the web.</span>
+	                        	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="margin: auto; width: 100%; float: left; padding-bottom: 10px;">
+		<div style="width: 700px; margin: auto; height: 220px; text-align: left;">
+			<div id="posts" style="text-align: left; float: left; width: 700px; padding-bottom: 10px;">
+				<h2>Recent Blog Posts</h2>
+				<table width="100%" style="font-size: 1.0em;">
+				
+				<tr>
+					<td width="20%"><span class="date">28 Feb 2010</span></td>
+					<td><a href="/dev//2010/02/28/beginning.html">A starting point</a></td>
+				</tr>
+				
+				</table>	
+			</div>
+			<div id="flickr_feed" style="text-align: left; float: left; width: 350px;">
+				<h2 class="flickr">Flickr!</h2>
+			</div>
+			<div id="twitter" style="text-align: left; float: left; width: 342px;">
+				<h2>Twitter!</h2>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4699464-6");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>

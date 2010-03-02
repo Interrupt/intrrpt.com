@@ -1,0 +1,28 @@
+---
+layout: post
+title: Make a highlighted Log4Net viewer using Cygwin
+---
+
+As a developer who's spent time on both sides of the Linux / Windows divide, I like to be able to use my Unix-ey bag of tricks when developing in the MS world. One of the first things I end up installing on a Windows machine is "_Cygwin_":http://www.cygwin.com - a "Linux-like environment for Windows" that lets me use a bash shell just like if I was in the linux world.
+
+While working on an ASP.NET website it can be nice to watch the output of the site's log file during testing, using Cygwin this can be done simply:
+
+{% highlight bash %}
+tail -f /path/to/log.txt
+{% endhighlight %}
+
+This will create an auto scrolling log viewer to watch what's coming into the log in real time. Even better would be to add some color so that we can scan through the log quicker when looking for red highlighted errors. We can do this by piping the results of the _tail_ command through a perl script:
+
+{% highlight perl %}
+tail -f /path/to/log.txt | perl -pe '
+s/[\x20-\x7E]*(FATAL|Exception:|ERROR)[\x20-\x7E]*/\e[1;31m$&\e[0m/g;
+s/[\x20-\x7E]*WARN[\x20-\x7E]*/\e[1;33m$&\e[0m/g;
+s/[\x20-\x7E]*INFO[\x20-\x7E]*/\e[1;32m$&\e[0m/g;
+s/ at /\e[1;36m$&\e[0m/g;
+s/\([\x20-\x7E]*\)\r/\e[1;35m$&\e[0m/g;
+s/:line [\x20-\x7E]*/\e[1;36m$&\e[0m/g;
+s/in [\x20-\x7E]*.cs/\e[1;34m$&\e[0m/g;
+'
+{% endhighlight %}
+
+The script above searches through the log being output and wraps lines containing FATAL, ERROR, WARN, and INFO blocks in color control characters. This gives us a nice looking log that is easy to scan while working with the site in another window.
