@@ -1,0 +1,12 @@
+---
+title: Of Software and Motorcycles
+layout: post
+---
+
+I like motorcycles. A correction - I like _motorcycles_, but not always the culture around them. There are many motorcycle owners that have one just for the status it brings the owner, the people who care more about the brand of bike than where it's been, but for me the draw is the sense of freedom that riding a motorcycle brings. The act of being forced to concentrate on one task, navigating an upcoming corner or avoiding ruts on a washed out trail, bring on a sense of zen that clear out my normally cluttered thoughts.
+
+This can all be traced back to my father, a farmboy turned mechanic turned farmer/mechanic. He's the one who pushed me to start riding, learning as he did by running a dirtbike around the family farm. I once thought I took a much different path when it came to professions than he did, but it turns out our choices are not as different as I once thought. This revelation finally crystallized when I found myself thinking about the process of debugging software while standing over a half disassembled sportbike in my dad's garage.
+
+It was my brother's bike that had died quickly after being started the last time he'd tried to take it out before winter set in and we were attempting to find out why. I watched my father track down the issue using the exact same steps I'd take when debugging a software problem, just using different tools. Instead of a debugger to step through code, a test lamp to step through wiring. In place of a crash report, the account of the bike firing up and sputtering out.
+
+At the end one component was singled out: a faulty fuel pump. I also came away with a feeling that maybe my drive towards motorcycles isn't a strange coincident. Motorcycles are one of the few vehicles still simple enough that a beginner can do some wrenching on it, not something that can be done on modern cars. It's another extension of my drive towards technology, that love of solving a problem and learning how things tick. A shared trait in our family. 

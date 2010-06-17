@@ -1,0 +1,26 @@
+---
+layout: post
+title: Enabling push email for your Android phone 
+---
+
+Recently I've been carrying two cell phones, an older Blackberry Curve and the new hotness - a Motorola Droid. This is the result of Alltel's draconian early termination policy and a too-good-to-pass-up deal on Verizon that happened to come along a few weeks before the old contract was up.
+
+The Droid is better in almost every way than the Blackberry out of the box. It's got a huge screen, it's amazingly responsive, it syncs all my google accounts, and has a ton of apps due to it being an open platform. But receiving and alerting me to new email takes seemingly forever in some cases - if a fire drill occurs at work I want to know about it as soon as I can.
+
+Thankfully as I said earlier the Android ecosystem is an open one, and people have been busy. Push email is now supported on the K-9 Mail app, a fork of the default mail application which can easily be installed from the Marketplace. It implements push email for IMAP accounts that support IMAP IDLE which Gmail and many other mail services do.
+
+To enable a Gmail account to use the push feature you first need to do a little setup. IMAP access needs to be enabled in your Gmail settings page under "Forwarding and POP/IMAP".
+
+Now you can install the K-9 Mail application on your phone. When you first start K-9 Mail it will ask for your email address and password and with a gmail account it will want to setup everything automatically if you push next, but not the way we want. Instead use the "Manual Setup" button to go through the process of connecting over IMAP.
+
+Use your full email address as your username, and use the following server settings when setting your incoming and outgoing mail servers:
+
+*Incoming*
+Server: imap.gmail.com
+Security type: SSL (always)
+
+*Outgoing*
+Server: smtp.gmail.com
+Security type: SSL (always)
+
+Once setup as shown above K-9 Mail will notify you for new email almost instantly. With this setup I've received emails on my phone before even my desktop sync does, a win in my book for the open Android platform. 
