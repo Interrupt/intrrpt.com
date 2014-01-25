@@ -1,0 +1,37 @@
+@font-face {
+	font-family: bitFont;
+	src: url( uni05_54.ttf );
+}
+
+@font-face {
+	font-family: bitFontBold;
+	src: url( uni05_64.ttf );
+}
+
+body { background-color: #333; color: #eee; font-family: helvetica, verdana, sans-serif; }
+a { color: #1294FF; text-decoration: none; }
+a:hover { color: #fff; }
+a img { border: none; }
+li { list-style-type: none; margin-bottom: 10px; }
+ul { margin: 0 0 0 0; padding: 0 0 0 0; }
+h1 { font-size: 32pt; font-family: bitFontBold; text-shadow: #ccc 0px 0px 3px; }
+h2 { font-family: bitFont; font-size: 15pt; text-shadow: #ccc 0px 0px 3px;}
+h3 { font-family: bitFont; font-size: 1.5em; color: #000; text-shadow: #000 0px 0px 1px;}
+
+#logo { 
+	width: 180px;
+	height: 180px;
+	float: left;
+	background-size: 100%;
+	margin-right: 20px;
+}
+
+#main { width: 600px; margin: auto; font-size: 0.9em; margin-top: 4px; }
+#header { height: 180px; }
+#screens li { float: left; }
+#screens { height: 96px; }
+#actions { clear: left; background-color: #222; padding: 10px; text-align: center; color: #666; margin-top: 10px; font-family: bitFont; font-size: 1.25em; }
+#press { float: left; width: 300px; line-height: 145%; }
+#news { float: left; width: 300px; line-height: 145%; }
+#footer { clear: left; font-size: 0.9em; text-align: center; padding-top: 20px; font-family: bitFont; color: #666; }
+#description { line-height: 145%; }
